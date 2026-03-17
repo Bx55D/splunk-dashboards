@@ -1,0 +1,55 @@
+indicator_type,indicator_value,match_type,mitre_tactic_id,mitre_tactic,mitre_technique_id,mitre_technique,apt_group,severity,confidence,description,reference
+process_name,powershell.exe,exact,TA0002,Execution,T1059.001,PowerShell,APT33|APT34|MuddyWater,high,medium,PowerShell execution - common across all Iranian APTs. Requires command-line analysis for attribution.,MITRE ATT&CK G0064/G0049/G0069
+cmdline_pattern,.*-enc\s.*,regex,TA0002,Execution,T1059.001,PowerShell - Encoded Command,APT33|MuddyWater,critical,high,"Encoded PowerShell commands used by APT33 (POWERTON) and MuddyWater (POWERSTATS, DarkBeatC2).",Picus Security 2025; MITRE T1059.001
+cmdline_pattern,.*-encodedcommand\s.*,regex,TA0002,Execution,T1059.001,PowerShell - Encoded Command,APT33|MuddyWater,critical,high,Full -encodedcommand flag variant.,MITRE T1059.001
+cmdline_pattern,.*Net\.WebClient.*,regex,TA0002,Execution,T1059.001,PowerShell - Download Cradle,APT33|APT34|MuddyWater,critical,high,PowerShell download cradle - common initial payload delivery mechanism.,MITRE T1059.001
+cmdline_pattern,.*DownloadString.*,regex,TA0002,Execution,T1059.001,PowerShell - Download Cradle,APT33|APT34|MuddyWater,critical,high,DownloadString method for payload retrieval.,MITRE T1059.001
+cmdline_pattern,.*Invoke-WebRequest.*,regex,TA0002,Execution,T1059.001,PowerShell - Download Cradle,MuddyWater,high,medium,Invoke-WebRequest used in MuddyWater campaigns.,USCYBERCOM Alert Jan 2022
+cmdline_pattern,.*Start-BitsTransfer.*,regex,TA0002,Execution,T1059.001,PowerShell - Download via BITS,MuddyWater,high,medium,BITS transfer abuse for payload download.,MITRE T1197
+cmdline_pattern,.*Invoke-Expression.*|.*iex\s.*,regex,TA0005,Defense Evasion,T1059.001,PowerShell - IEX Execution,APT33|MuddyWater,high,medium,Invoke-Expression for in-memory execution.,MITRE T1059.001
+cmdline_pattern,.*frombase64string.*,regex,TA0005,Defense Evasion,T1140,Deobfuscate/Decode,APT33|MuddyWater,high,medium,Base64 decoding in PowerShell - payload deobfuscation.,MITRE T1140
+cmdline_pattern,.*POWERSTATS.*,regex,TA0011,Command and Control,T1059.001,POWERSTATS C2 Backdoor,MuddyWater,critical,high,MuddyWater POWERSTATS backdoor signature.,Trend Micro 2019; MITRE G0069
+cmdline_pattern,.*DarkBeat.*,regex,TA0011,Command and Control,T1102,DarkBeatC2 Framework,MuddyWater,critical,high,"MuddyWater DarkBeatC2 framework (current generation, identified early 2024).",Deep Instinct 2024
+cmdline_pattern,.*MuddyC2.*|.*MuddyC3.*,regex,TA0011,Command and Control,T1102,MuddyC2/C3 Framework,MuddyWater,critical,high,"MuddyWater legacy C2 frameworks (MuddyC3 Python 2, MuddyC2Go Golang).",MITRE G0069
+cmdline_pattern,.*PhonyC2.*,regex,TA0011,Command and Control,T1102,PhonyC2 Framework,MuddyWater,critical,high,"MuddyWater PhonyC2 framework (Python 3, source code leaked).",MITRE G0069
+process_name,mshta.exe,exact,TA0002,Execution,T1218.005,Mshta,MuddyWater,high,high,mshta.exe is MuddyWater primary LOLBin. Spawning PowerShell or cmd.exe is high-confidence indicator.,MITRE G0069; Picus 2025
+process_name,regsvr32.exe,exact,TA0005,Defense Evasion,T1218.010,Regsvr32,MuddyWater,high,medium,regsvr32.exe proxy execution - MuddyWater LOLBin abuse.,MITRE G0069
+process_name,rundll32.exe,exact,TA0005,Defense Evasion,T1218.011,Rundll32,MuddyWater|APT42,medium,medium,rundll32.exe abuse by MuddyWater and APT42 (Moses Staff overlap).,MITRE T1218.011
+process_name,certutil.exe,exact,TA0005,Defense Evasion,T1140,Certutil Decode/Download,APT34|APT35,high,high,certutil.exe for file download and decode - APT34 and APT35 signature technique.,MITRE G0049; Trellix 2024
+cmdline_pattern,.*certutil.*-urlcache.*,regex,TA0011,Command and Control,T1105,Certutil Remote Download,APT34|APT35,critical,high,certutil downloading remote files - strong APT34/35 indicator.,MITRE T1105
+cmdline_pattern,.*certutil.*-decode.*,regex,TA0005,Defense Evasion,T1140,Certutil Decode,APT34|APT35,high,high,certutil decoding payloads from encoded files.,MITRE T1140
+process_name,cmstp.exe,exact,TA0005,Defense Evasion,T1218.003,CMSTP,MuddyWater,medium,medium,CMSTP proxy execution.,MITRE T1218.003
+process_name,wmic.exe,exact,TA0002,Execution,T1047,WMI,APT33|APT34,medium,medium,WMI command execution for lateral movement and discovery.,MITRE T1047
+process_name,msiexec.exe,exact,TA0005,Defense Evasion,T1218.007,Msiexec,MuddyWater,medium,low,msiexec proxy execution - less common but observed.,MITRE T1218.007
+cmdline_pattern,.*comsvcs.*lsass.*|.*comsvcs.*MiniDump.*,regex,TA0006,Credential Access,T1003.001,LSASS Dump via comsvcs.dll,MuddyWater|APT39,critical,high,LSASS memory dumping via comsvcs.dll MiniDump - MuddyWater and APT39 technique.,MITRE T1003.001
+cmdline_pattern,.*procdump.*lsass.*,regex,TA0006,Credential Access,T1003.001,LSASS Dump via ProcDump,APT33|APT34|APT39,critical,high,LSASS dumping via Sysinternals ProcDump.,MITRE T1003.001
+cmdline_pattern,.*mimikatz.*|.*sekurlsa.*,regex,TA0006,Credential Access,T1003.001,Mimikatz,APT33|APT34|APT39|MuddyWater,critical,high,Mimikatz credential harvesting tool used by all Iranian APTs. APT39 uses modified variants.,MITRE T1003.001; Picus 2025
+cmdline_pattern,.*lazagne.*,regex,TA0006,Credential Access,T1555,LaZagne Credential Harvester,APT33|APT34|APT35|MuddyWater,critical,high,LaZagne open-source credential recovery tool used across all major Iranian APTs.,Trellix 2024
+cmdline_pattern,.*schtasks.*/create.*,regex,TA0003,Persistence,T1053.005,Scheduled Task Creation,APT34|APT33,high,medium,Scheduled task creation - APT34 SideTwist uses 5-minute interval tasks.,MITRE G0049
+cmdline_pattern,.*reg\s+add.*\\Run\\.*,regex,TA0003,Persistence,T1547.001,Registry Run Key,APT33,high,high,Registry Run key persistence - APT33 Tickler persists as SharePoint.exe in Run key.,Picus 2025
+cmdline_pattern,.*SharePoint\.exe.*,regex,TA0003,Persistence,T1547.001,Tickler Backdoor Persistence,APT33,critical,high,APT33 Tickler backdoor masquerades as SharePoint.exe via Run registry key.,Microsoft 2024
+cmdline_pattern,.*nltest.*/dclist.*|.*nltest.*/domain_trusts.*,regex,TA0007,Discovery,T1482,Domain Trust Discovery,APT33|APT34,medium,medium,Domain trust enumeration for lateral movement planning.,MITRE T1482
+cmdline_pattern,.*net\s+view.*|.*net\s+group.*domain.*,regex,TA0007,Discovery,T1018,Remote System Discovery,APT33|APT34|APT39,medium,medium,Network discovery commands used pre-lateral movement.,MITRE T1018
+cmdline_pattern,.*whoami.*/all.*|.*whoami.*/priv.*,regex,TA0007,Discovery,T1033,System Owner/User Discovery,APT33|APT34|MuddyWater,low,low,User context discovery - common but low signal without other indicators.,MITRE T1033
+cmdline_pattern,.*psexec.*,regex,TA0008,Lateral Movement,T1021.002,PsExec Lateral Movement,APT33|APT34,high,medium,PsExec for remote service execution and lateral movement.,MITRE T1021.002
+useragent_pattern,.*go-http-client.*,regex,TA0006,Credential Access,T1110.003,Password Spray (go-http-client),APT33,critical,high,APT33 password spraying via go-http-client through TOR exit nodes. Primary initial access method since 2023.,Microsoft 2024; Picus 2025
+process_name,wscript.exe,exact,TA0002,Execution,T1059.005,VBScript Execution,APT34|MuddyWater,medium,medium,VBScript execution - used in document macro chains.,MITRE T1059.005
+process_name,cscript.exe,exact,TA0002,Execution,T1059.005,VBScript/JScript Execution,APT34|MuddyWater,medium,medium,CScript execution for VBS/JS payloads.,MITRE T1059.005
+file_name,goopdate.dll,exact,TA0002,Execution,T1574.002,PowGoop DLL Loader,MuddyWater,critical,high,MuddyWater PowGoop DLL side-loading via fake Google Update DLL.,USCYBERCOM 2022
+file_name,goopdate.dat,exact,TA0002,Execution,T1574.002,PowGoop Second Loader,MuddyWater,critical,high,MuddyWater PowGoop second-stage loader.,USCYBERCOM 2022
+file_name,SystemFailureReporter,exact,TA0003,Persistence,T1053.005,SideTwist Persistence,APT34,critical,high,APT34 SideTwist backdoor drops to %LOCALAPPDATA%\SystemFailureReporter\.,MITRE G0049
+file_name,update.xml,exact,TA0002,Execution,T1059,SideTwist Activation Switch,APT34,high,high,APT34 SideTwist uses update.xml as activation switch file.,MITRE G0049
+process_name,atera_agent.exe,exact,TA0011,Command and Control,T1219,RMM Tool - Atera,MuddyWater,high,medium,MuddyWater abuses Atera RMM agent for post-compromise access.,Picus 2025
+process_name,screenconnect.exe,exact,TA0011,Command and Control,T1219,RMM Tool - ConnectWise,MuddyWater,high,medium,MuddyWater abuses ConnectWise ScreenConnect for remote access.,Picus 2025
+process_name,tacticalrmm.exe,exact,TA0011,Command and Control,T1219,RMM Tool - Tactical RMM,MuddyWater,high,medium,MuddyWater cycles through RMM platforms including Tactical RMM.,Picus 2025
+process_name,simplehelp.exe,exact,TA0011,Command and Control,T1219,RMM Tool - SimpleHelp,MuddyWater,high,medium,MuddyWater abuses SimpleHelp for persistent remote access.,Group-IB 2025
+parent_child,outlook.exe>powershell.exe,exact,TA0002,Execution,T1566.001,Spearphish Macro - Outlook>PS,APT34|APT35,critical,high,Outlook spawning PowerShell indicates spearphishing macro execution.,MITRE T1566.001
+parent_child,outlook.exe>cmd.exe,exact,TA0002,Execution,T1566.001,Spearphish Macro - Outlook>CMD,APT34|APT35,critical,high,Outlook spawning cmd.exe indicates spearphishing macro execution.,MITRE T1566.001
+parent_child,winword.exe>powershell.exe,exact,TA0002,Execution,T1566.001,Spearphish Macro - Word>PS,APT34|APT35|MuddyWater,critical,high,Word spawning PowerShell - document macro payload delivery.,MITRE T1566.001
+parent_child,winword.exe>cmd.exe,exact,TA0002,Execution,T1566.001,Spearphish Macro - Word>CMD,APT34|APT35|MuddyWater,critical,high,Word spawning cmd.exe via macro execution.,MITRE T1566.001
+parent_child,winword.exe>mshta.exe,exact,TA0002,Execution,T1218.005,Macro > Mshta Chain,MuddyWater,critical,high,Word macro launching mshta.exe - MuddyWater delivery chain.,MITRE G0069
+parent_child,mshta.exe>powershell.exe,exact,TA0002,Execution,T1218.005,Mshta > PowerShell Chain,MuddyWater,critical,high,mshta.exe spawning PowerShell - primary MuddyWater execution chain.,MITRE G0069; Picus 2025
+parent_child,explorer.exe>mshta.exe,exact,TA0002,Execution,T1218.005,Explorer > Mshta Chain,MuddyWater,high,medium,Explorer spawning mshta.exe - MuddyWater LNK/HTA delivery.,MITRE G0069
+parent_child,svchost.exe>powershell.exe,exact,TA0002,Execution,T1053.005,Svchost > PowerShell (Sched Task),APT34|APT33,high,medium,svchost spawning PowerShell may indicate scheduled task execution of malicious payload.,MITRE T1053.005
+parent_child,w3wp.exe>cmd.exe,exact,TA0002,Execution,T1505.003,Web Shell Execution,APT34,critical,high,IIS worker process spawning cmd - potential web shell (APT34 deploys ASP.NET web shells).,MITRE G0049
+parent_child,w3wp.exe>powershell.exe,exact,TA0002,Execution,T1505.003,Web Shell PS Execution,APT34,critical,high,IIS worker process spawning PowerShell - web shell indicator.,MITRE G0049
