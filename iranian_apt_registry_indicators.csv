@@ -1,0 +1,6 @@
+registry_path_pattern,match_type,apt_group,mitre_technique_id,severity,confidence,description,reference
+*\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\*,wildcard,APT33,T1547.001,high,medium,Run key persistence - APT33 Tickler uses this as SharePoint.exe.,Microsoft 2024
+*\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\*,wildcard,APT33|APT34,T1547.001,high,medium,RunOnce key persistence.,MITRE T1547.001
+*\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\*,wildcard,MuddyWater,T1547.001,critical,high,Winlogon registry persistence - MuddyWater Phoenix backdoor (2025).,Group-IB Oct 2025
+*\\SYSTEM\\CurrentControlSet\\Services\\*,wildcard,APT33|APT34,T1543.003,high,medium,Service creation persistence.,MITRE T1543.003
+*\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\SharePoint*,wildcard,APT33,T1547.001,critical,high,Specific APT33 Tickler backdoor persistence indicator - masquerades as SharePoint.exe.,Microsoft 2024

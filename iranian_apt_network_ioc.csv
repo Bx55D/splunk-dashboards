@@ -1,0 +1,4 @@
+ip_address,match_type,apt_group,ioc_type,confidence,first_seen,last_seen,description,reference
+PLACEHOLDER_IP_1,exact,APT33,c2_server,high,,,"Replace with current APT33 C2 IPs from threat intel feed (e.g., Azure-hosted infrastructure).",
+PLACEHOLDER_IP_2,exact,APT34,c2_server,high,,,Replace with current APT34 C2 IPs from threat intel feed.,
+PLACEHOLDER_IP_3,exact,MuddyWater,c2_server,high,,,Replace with current MuddyWater C2 IPs from threat intel feed.,

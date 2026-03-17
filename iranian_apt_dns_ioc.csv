@@ -1,0 +1,9 @@
+domain_pattern,match_type,apt_group,domain_type,confidence,first_seen,last_seen,description,reference
+*.onehub.com,wildcard,MuddyWater,payload_hosting,medium,2024,2025,MuddyWater cloud file hosting for payload delivery.,Picus 2025
+*.sync.com,wildcard,MuddyWater,payload_hosting,medium,2024,2025,MuddyWater cloud storage abuse for payload delivery.,Picus 2025
+*.egnyte.com,wildcard,MuddyWater,payload_hosting,medium,2024,2025,MuddyWater Egnyte cloud hosting abuse.,Picus 2025
+*.terabox.com,wildcard,MuddyWater,payload_hosting,medium,2024,2025,MuddyWater TeraBox cloud hosting abuse.,Picus 2025
+*.backblazeb2.com,wildcard,APT35,c2_infrastructure,medium,2023,2025,APT35 Backblaze B2 cloud storage for C2.,Picus 2025
+screenai.online,exact,MuddyWater,c2_domain,high,2025-08-17,2025-08-24,MuddyWater Phoenix backdoor C2 domain (confirmed by Group-IB).,Group-IB Oct 2025
+PLACEHOLDER_APT34_C2_DOMAIN,exact,APT34,c2_domain,high,,,Replace with current APT34 C2 domains from threat intel feed.,
+PLACEHOLDER_APT33_C2_DOMAIN,exact,APT33,c2_domain,high,,,Replace with current APT33 C2 domains from threat intel feed.,
