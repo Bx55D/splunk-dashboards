@@ -1,0 +1,8 @@
+indicator_type,indicator_value,match_type,apt_group,mitre_technique_id,severity,confidence,description,reference
+user_agent,go-http-client,contains,APT33,T1110.003,critical,high,APT33 password spray tool uses go-http-client user-agent via TOR exit nodes. Primary initial access since 2023.,Microsoft 2024
+user_agent,python-requests,contains,MuddyWater|APT34,T1110.003,medium,low,Generic Python requests library - may indicate automated auth attempts. Low confidence without other indicators.,Generic
+logon_failure_threshold,20,numeric_gt,APT33,T1110.003,critical,high,More than 20 unique target accounts from single source in 1 hour = password spray. APT33 signature pattern.,Microsoft 2024; Picus 2025
+logon_failure_threshold,50,numeric_gt,APT33|APT34,T1110.001,critical,high,More than 50 failures to single account from single source = brute force.,MITRE T1110.001
+time_window,04:30-12:30 UTC,time_range,APT33|APT34|APT35|APT39|APT42|MuddyWater,,medium,medium,Iranian business hours (UTC+3:30 = 08:00-16:00 IRST). Authentication activity clustering in this window from unknown sources may indicate Iranian APT operations.,Threat Intel Analysis
+time_window,16:30-01:30 UTC,time_range,APT33|APT34|MuddyWater,,low,low,Extended Iranian working hours including late-shift operations.,Threat Intel Analysis
+vpn_provider,NordVPN,contains,MuddyWater,T1090,high,medium,MuddyWater documented use of NordVPN for operational anonymisation (Group-IB confirmed Aug 2025).,Group-IB Oct 2025
