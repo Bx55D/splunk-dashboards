@@ -1,0 +1,55 @@
+| makeresults
+| eval mitre_tactic=split("Reconnaissance|Resource Development|Initial Access|Execution|Persistence|Privilege Escalation|Defense Evasion|Credential Access|Discovery|Lateral Movement|Collection|Command and Control|Exfiltration|Impact","|")
+| mvexpand mitre_tactic
+| eval seed_count=0
+| append [
+    | tstats summariesonly=t count from datamodel=Endpoint.Processes by Processes.process_name
+    | rename Processes.process_name as process_name
+    | eval process_name=lower(trim(process_name)), indicator_type="process_name"
+    | lookup iranian_apt_technique_map.csv indicator_type AS indicator_type indicator_value AS process_name OUTPUT mitre_tactic mitre_technique
+    | search mitre_tactic=*
+    | stats sum(count) as event_count by mitre_tactic mitre_technique
+
+    | append [
+        | tstats summariesonly=t count from datamodel=Authentication where Authentication.action=failure by Authentication.app
+        | eval mitre_tactic="Credential Access", mitre_technique="Failed Authentication"
+        | stats sum(count) as event_count by mitre_tactic mitre_technique
+    ]
+
+    | append [
+        | tstats summariesonly=t count from datamodel=Network_Traffic where Network_Traffic.action=blocked by Network_Traffic.transport
+        | eval mitre_tactic="Initial Access", mitre_technique="Blocked Network Traffic"
+        | stats sum(count) as event_count by mitre_tactic mitre_technique
+    ]
+]
+| eventstats sum(event_count) as tactic_total by mitre_tactic
+| sort 0 mitre_tactic - event_count
+| streamstats count as technique_rank by mitre_tactic
+| eval top_technique=if(technique_rank=1, mitre_technique, null())
+| stats 
+    max(tactic_total) as event_count
+    values(top_technique) as top_technique
+    max(seed_count) as seed_count
+  by mitre_tactic
+| eval event_count=coalesce(event_count, seed_count, 0)
+| eval top_technique=coalesce(mvindex(top_technique,0), "None")
+| eval tactic_order=case(
+    mitre_tactic="Reconnaissance",1,
+    mitre_tactic="Resource Development",2,
+    mitre_tactic="Initial Access",3,
+    mitre_tactic="Execution",4,
+    mitre_tactic="Persistence",5,
+    mitre_tactic="Privilege Escalation",6,
+    mitre_tactic="Defense Evasion",7,
+    mitre_tactic="Credential Access",8,
+    mitre_tactic="Discovery",9,
+    mitre_tactic="Lateral Movement",10,
+    mitre_tactic="Collection",11,
+    mitre_tactic="Command and Control",12,
+    mitre_tactic="Exfiltration",13,
+    mitre_tactic="Impact",14
+)
+| eventstats max(event_count) as max_count
+| eval intensity=if(max_count=0, 0, round(event_count/max_count, 3))
+| sort 0 tactic_order
+| table tactic_order mitre_tactic event_count top_technique intensity
