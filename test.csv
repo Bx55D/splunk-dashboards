@@ -1,0 +1,78 @@
+"RelatedGroup","Type","Attack","Scheme","Address","Port","Path","Query","Fragment","EmailAddress","HashValue","Malware","MalwareId","FirstSeen","LastSeen"
+"Lazarus Group","domain","payload_delivery",,"99media.com.pk",,,,,,,"Appleseed","win.appleseed","1774247333",
+"Lazarus Group","domain","botnet_cc",,"api.videodriverzone.cloud",,,,,,,"Unknown Stealer","unknown_stealer","1741172667","1772427960"
+"Lazarus Group","domain","botnet_cc",,"api.videotechdrivers.cloud",,,,,,,"Unknown Stealer","unknown_stealer","1741172666","1772427960"
+"Lazarus Group","domain","botnet_cc",,"api.driversnap.cloud",,,,,,,"Unknown Stealer","unknown_stealer","1741172665","1772427960"
+"Lazarus Group","domain","botnet_cc",,"api.camdriverstore.cloud",,,,,,,"Unknown Stealer","unknown_stealer","1741172665","1772427960"
+"Lazarus Group","domain","botnet_cc",,"api.driverstream.cloud",,,,,,,"Unknown Stealer","unknown_stealer","1741172664","1772427960"
+"Lazarus Group","domain","botnet_cc",,"api.drivercamhub.cloud",,,,,,,"Unknown Stealer","unknown_stealer","1741172663","1772427960"
+"Lazarus Group","domain","botnet_cc",,"api.videocarddrivers.cloud",,,,,,,"Unknown Stealer","unknown_stealer","1741172663","1772427960"
+"Lazarus Group","domain","botnet_cc",,"api.camdrivers.cloud",,,,,,,"Unknown Stealer","unknown_stealer","1741172661","1772427960"
+"Lazarus Group","domain","botnet_cc",,"api.camdriverhub.cloud",,,,,,,"Unknown Stealer","unknown_stealer","1741172660","1772427960"
+"Lazarus Group","domain","botnet_cc",,"api.vcamdriverupdate.cloud",,,,,,,"Unknown Stealer","unknown_stealer","1741172659","1772427960"
+"Lazarus Group","domain","botnet_cc",,"api.provideodrivers.cloud",,,,,,,"Unknown Stealer","unknown_stealer","1741172658","1772427960"
+"Lazarus Group","domain","botnet_cc",,"api.vidtechhub.cloud",,,,,,,"Unknown Stealer","unknown_stealer","1741172654","1772427960"
+"MuddyWater","ip:port","botnet_cc",,"8.217.47.190","8848",,,,,,"Unknown malware","unknown","1773302941",
+"APT28","sha256_hash","payload",,,,,,,,"52b6fb40e7efb09c2bebe8550178e7e30009600bdedd1acae085d753761b7598","BEARDSHELL","win.beardshell","1773592289",
+"APT28","sha256_hash","payload",,,,,,,,"a876f648991711e44a8dcf888a271880c6c930e5138f284cd6ca6128eca56ba1","BEARDSHELL","win.beardshell","1773592289",
+"APT28","sha256_hash","payload",,,,,,,,"8c1dc9732884c6078b23953b78314a8d0d8b8d9fe42e5f97a7cd09b8ace943a9","BEARDSHELL","win.beardshell","1773592289",
+"APT28","sha256_hash","payload",,,,,,,,"fd3f13db41cd5b442fa26ba8bc0e9703ed243b3516374e3ef89be71cbf07436b","BEARDSHELL","win.beardshell","1773592288",
+"APT28","sha256_hash","payload",,,,,,,,"0bb0d54033767f081cae775e3cf9ede7ae6bea75f35fbfb748ccba9325e28e5e","BEARDSHELL","win.beardshell","1773592288",
+"APT28","sha256_hash","payload",,,,,,,,"7ccf7e8050c66eed69f35159042d8043032f8afe48ae1f51fce75ce2c51395f2","BEARDSHELL","win.beardshell","1773592287",
+"APT28","sha256_hash","payload",,,,,,,,"b2ba51b4491da8604ff9410d6e004971e3cd9a321390d0258e294ac42010b546","BEARDSHELL","win.beardshell","1773592287",
+"APT28","sha256_hash","payload",,,,,,,,"9f4672c1374034ac4556264f0d4bf96ee242c0b5a9edaa4715b5e61fe8d55cc8","BEARDSHELL","win.beardshell","1773592287",
+"APT28","url","payload_delivery","https","wellnessmedcare.org",,"/buch/Favorites/document.doc.LnK",,,,,"BEARDSHELL","win.beardshell","1773557341",
+"APT28","url","payload_delivery","https","freefoodaid.com",,"/ankara/Favorites/document.doc.LnK",,,,,"BEARDSHELL","win.beardshell","1773557338",
+"APT28","ip:port","payload_delivery",,"159.253.120.2","443",,,,,,"BEARDSHELL","win.beardshell","1773557337",
+"APT28","ip:port","payload_delivery",,"72.62.185.31","443",,,,,,"BEARDSHELL","win.beardshell","1773557337",
+"APT28","ip:port","payload_delivery",,"23.227.202.14","443",,,,,,"BEARDSHELL","win.beardshell","1773557337",
+"APT28","url","payload_delivery","http","wellnessmedcare.org",,"/cz/Downloads/blank.doc",,,,,"Unknown malware","unknown","1770273167",
+"APT28","url","payload_delivery","http","wellnesscaremed.com",,"/ankara/Favorites/blank.doc",,,,,"Unknown malware","unknown","1770273167",
+"APT28","url","payload_delivery","http","wellnesscaremed.com",,"/buch/Downloads/blank.doc",,,,,"Unknown malware","unknown","1770273167",
+"APT28","url","payload_delivery","http","wellnesscaremed.com",,"/ljub/Downloads/blank.doc",,,,,"Unknown malware","unknown","1770273167",
+"APT28","url","payload_delivery","http","wellnesscaremed.com",,"/venezia/Favorites/blank.doc",,,,,"Unknown malware","unknown","1770273167",
+"APT28","url","payload_delivery","http","wellnessmedcare.org",,"/pol/Downloads/blank.doc",,,,,"Unknown malware","unknown","1770273167",
+"APT28","url","payload_delivery","https","wellnessmedcare.org",,"/pol/Downloads/document.LnK","init=1",,,,"Unknown malware","unknown","1770273166",
+"APT28","url","payload_delivery","https","wellnessmedcare.org",,"/cz/Downloads/document.LnK","init=1",,,,"Unknown malware","unknown","1770273166",
+"APT28","url","payload_delivery","https","wellnesscaremed.com",,"/venezia/Favorites/document.doc.LnK","init=1",,,,"Unknown malware","unknown","1770273166","1773529597"
+"APT28","url","payload_delivery","https","wellnesscaremed.com",,"/ljub/Downloads/document.doc.LnK","init=1",,,,"Unknown malware","unknown","1770273166",
+"APT28","url","payload_delivery","https","wellnesscaremed.com",,"/buch/Downloads/document.doc.LnK","init=1",,,,"Unknown malware","unknown","1770273166",
+"APT28","url","payload_delivery","https","wellnesscaremed.com",,"/ankara/Favorites/document.doc.LnK","init=1",,,,"Unknown malware","unknown","1770273166",
+"APT28","url","payload_delivery","https","freefoodaid.com",,"/documents/1_1.LnK","init=1",,,,"Unknown malware","unknown","1770273165",
+"APT28","url","payload_delivery","https","longsauce.com",,"/DAv/DEFault/df.doc",,,,,"Unknown malware","unknown","1770273165",
+"APT28","url","payload_delivery","https","longsauce.com",,"/DAv/DEFault/data.LnK","init=1",,,,"Unknown malware","unknown","1770273165","1773529597"
+"APT28","url","payload_delivery","https","freefoodaid.com",,"/tables//template_tables.doc",,,,,"Unknown malware","unknown","1770273165",
+"APT28","url","payload_delivery","https","freefoodaid.com",,"/tables/tables.lNk","init=1",,,,"Unknown malware","unknown","1770273165",
+"APT28","url","payload_delivery","http","freefoodaid.com",,"/documents/2_1.lNk","init=1",,,,"Unknown malware","unknown","1770273165",
+"APT28","domain","botnet_cc",,"longsauce.com",,,,,,,"Unknown malware","unknown","1770273101","1773589928"
+"APT28","domain","botnet_cc",,"freefoodaid.com",,,,,,,"Unknown malware","unknown","1770273101","1773589928"
+"APT28","domain","botnet_cc",,"wellnessmedcare.org",,,,,,,"Unknown malware","unknown","1770273101","1773589928"
+"APT28","domain","botnet_cc",,"wellnesscaremed.com",,,,,,,"Unknown malware","unknown","1770273101","1773589928"
+"APT28","sha256_hash","payload",,,,,,,,"c91183175ce77360006f964841eb4048cf37cb82103f2573e262927be4c7607f","Unknown malware","unknown","1770272993","1773589902"
+"APT28","sha256_hash","payload",,,,,,,,"be859b4f4576ec09b69a2ef2d119939f7eb31de121aa01d38e1f0b2290f5a15e","Unknown malware","unknown","1770272993","1773589903"
+"APT28","sha256_hash","payload",,,,,,,,"b7342b03d7642c894ebad639b9b53fd851d7958298f454283c18748051946585","Unknown malware","unknown","1770272993",
+"APT28","sha256_hash","payload",,,,,,,,"baad1153e58c86aa1dc9346cdd06be53b5dd2a6cf76202536d6721c934008f8e","Unknown malware","unknown","1770272992","1773589903"
+"APT28","sha256_hash","payload",,,,,,,,"969d2776df0674a1cca0f74c2fccbc43802b4f2b62ecccecc26ed538e9565eae","Unknown malware","unknown","1770272938","1773589925"
+"APT28","sha256_hash","payload",,,,,,,,"5a17cfaea0cc3a82242fdd11b53140c0b56256d769b07c33757d61e0a0a6ec02","Unknown malware","unknown","1770272938","1773589902"
+"APT28","sha256_hash","payload",,,,,,,,"e792adf4dff54faca5b9f5b32c1a2df3a6a955e722f1be8df2451c03ed940e41","Unknown malware","unknown","1770272938",
+"APT28","sha256_hash","payload",,,,,,,,"1ed863a32372160b3a25549aad25d48d5352d9b4f58d4339408c4eea69807f50","Unknown malware","unknown","1770272938","1773589925"
+"APT28","sha256_hash","payload",,,,,,,,"968756e62052f9af80934b599994addbab29f8dc2615c47cda512bae48771019","Unknown malware","unknown","1770272938",
+"APT28","sha256_hash","payload",,,,,,,,"d213b5079462e737eb940ac46c59e386eb6ca7f8decc95a594b3d8f3b6940010","Unknown malware","unknown","1770272938",
+"APT28","md5_hash","payload",,,,,,,,"859c4b85ed85e6cc4eadb1a037a61e16","Unknown malware","unknown","1770272885",
+"APT28","md5_hash","payload",,,,,,,,"e4a5c4b205e1b80dc20d9a2fb4126d06","Unknown malware","unknown","1770272885",
+"APT28","md5_hash","payload",,,,,,,,"d47261e52335b516a777da368208ee91","Unknown malware","unknown","1770272885",
+"APT28","md5_hash","payload",,,,,,,,"7c396677848776f9824ebe408bbba943","Unknown malware","unknown","1770272884",
+"APT28","md5_hash","payload",,,,,,,,"2f7b4dca1c79e525aef8da537294a6c4","Unknown malware","unknown","1770272884",
+"APT28","md5_hash","payload",,,,,,,,"337cecf067ecf0609b943b54fb246ed2","Unknown malware","unknown","1770272884",
+"APT28","md5_hash","payload",,,,,,,,"41c51784f6d601ffd0e09b7d59ff6025","Unknown malware","unknown","1770272884",
+"APT28","md5_hash","payload",,,,,,,,"4727582023cd8071a6f388ea3ba2feaa","Unknown malware","unknown","1770272884",
+"APT28","md5_hash","payload",,,,,,,,"58f517bdc9ba8de1b69829b0dcf86113","Unknown malware","unknown","1770272884",
+"APT28","md5_hash","payload",,,,,,,,"6408276cdfd12a1d5d3ed7256bfba639","Unknown malware","unknown","1770272884",
+"APT28","md5_hash","payload",,,,,,,,"b6a86f44d0a3fa5a5ac979d691189f2d","Unknown malware","unknown","1770272884",
+"APT28","md5_hash","payload",,,,,,,,"c306e0a3ec528368f0b0332104148266","Unknown malware","unknown","1770272884",
+"APT28","md5_hash","payload",,,,,,,,"1550ae7df233bb9a9c9e78bf8b236072","Unknown malware","unknown","1770272883",
+"APT28","md5_hash","payload",,,,,,,,"0df3fde016f3c0974d4aa01b06724a33","Unknown malware","unknown","1770272882",
+"APT28","md5_hash","payload",,,,,,,,"045d1e0686f8b4b49b2d9cf48ac821f8","Unknown malware","unknown","1770272881",
+"APT41","domain","botnet_cc",,"mcafeeupdates.com",,,,,,,"ShadowPad","win.shadowpad","1767941230","1767988095"
+"APT41","domain","botnet_cc",,"www.kasperskysecure.com",,,,,,,"ShadowPad","win.shadowpad","1767788940","1767801953"
+"APT41","domain","botnet_cc",,"www.googleaccount.org",,,,,,,"ShadowPad","win.shadowpad","1752624142","1767930445"
